@@ -5,8 +5,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-    popup: path.resolve("src/popup/popup.tsx"),
-    options: path.resolve("src/options/options.tsx"),
     background: path.resolve("src/background/background.ts"),
     content: path.resolve("src/contentScript/contentScript.ts"),
   },
@@ -39,7 +37,6 @@ module.exports = {
         },
       ],
     }),
-    ...getHTMLPlugins(["popup", "options"]),
   ],
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
@@ -59,7 +56,7 @@ function getHTMLPlugins(chunks) {
   return chunks.map(
     (chunk) =>
       new HtmlPlugin({
-        title: "React Extension",
+        title: "AdBlocker",
         filename: `${chunk}.html`,
         chunks: [chunk],
       })

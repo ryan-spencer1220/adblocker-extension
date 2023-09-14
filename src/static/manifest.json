@@ -1,19 +1,22 @@
 {
-  "manifest_version": 3,
-  "name": "React Extension",
+  "manifest_version": 2,
+  "name": "AdBlocker",
   "version": "1.0.0",
-  "description": "React Extension",
+  "description": "AdBlocker",
   "icons": {
     "16": "icon.png",
     "48": "icon.png",
     "128": "icon.png"
   },
-  "action": {
-    "default_popup": "index.html",
-    "default_title": "React Extension",
-    "default_icon": "icon.png"
-  },
-  "options_page": "options.html",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "<all_urls>",
+    "*://*.googleadservices.com/*",
+    "*://*.tpc.googlesyndication.com/*",
+    "*://*.g.doubleclick.net/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
