@@ -1,4 +1,4 @@
-# React Chrome Extension Boilerplate
+# AdBlocker Chrome Extension
 
 ## Getting Started
 
